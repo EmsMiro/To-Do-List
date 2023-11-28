@@ -1,0 +1,556 @@
+/* Importando arquivo de fonte*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: 'Poppins', sans-serif;
+  --clr-background-light: #FCF4E7;
+  --clr-background-dark: #32342F;
+  -clr-input-dark: #D9D9D9;
+  --clr-button-hover:#B8CF75DE;
+  --clr-button: #3DD7EB;
+  --clr-white: #FFFFFF;
+  --clr-black: #000000;
+  --clr-yellow: #F6D700;
+  --clr-blue: #5a8edc;
+  --clr-light-salmon: #E5BFAF94;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin: 60px;
+  /* width: 960px; */
+  background-color: var(--clr-background-light);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--ff-primary);
+  margin: 0 auto;
+}
+
+.header-title {
+  font-size: 34px;
+  width: 100%;
+  margin-left: 2%;
+}
+
+.header-icon {
+  margin-top: 20px;
+}
+
+.header-icon:hover img {
+  cursor: pointer;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin: 50px 0;
+}
+
+.grid-item {
+  padding: 20px;
+}
+
+/*Alteração da ordem de display do grid*/
+.createTask {
+  order: 1;
+}
+
+.task {
+  order: 2;
+  grid-row: span 3;  
+}
+
+.search {
+  order: 4;
+  height: 90%;
+}
+
+.filter {
+  order: 3;
+  height: 60%;
+}
+
+/*Estilo da section createTask*/
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.createTask {
+  font-family: var(--ff-secondary);
+}
+
+.input-style {
+  font-family: var(--ff-secondary);
+  font-size: 16px;
+  width: 90%;
+  max-width: 495px;
+  height: 40px;
+  max-height: 51.716px;
+  flex-shrink: 1;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: rgba(229, 191, 175, 0.58);
+  /* Light Right */
+  box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.25);
+}
+
+label {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+#create-task-button {
+  align-self: center;
+  font-family: var(--ff-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-right: 20%;
+  width: 25%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: var(--clr-button);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#create-task-button:hover {
+  cursor: pointer;
+  background-color: rgb(134, 204, 166);
+}
+
+/*Estilo da section tasks*/
+
+.task {
+  font-family: var(--ff-secondary);
+}
+
+.task-container {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  justify-content: space-between;
+  padding: 20px;
+  width: 90%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  filter: drop-shadow(-4px 4px 0px rgba(0, 0, 0, 0.25));
+}
+
+#task-list {
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+.icons {
+  padding-top: 20px;
+}
+
+.icon-done:hover img {
+  background-color: #5ec57e;
+  border-radius: 25px;
+}
+
+.icon-edit:hover img {
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.icon-delete:hover img {
+  background-color: #c60b0b;
+  border-radius: 25px;
+}
+
+/*Estilos da section filter*/
+
+.dropdown {
+  font-family: "Poppins", sans-serif;
+  width: 90%;
+  align-items: center;
+}
+
+.dropdown-title {
+  background-color: var(--clr-blue);
+  border-radius: 10px;
+  border: 1px solid var(--Fine-stroke, #000);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 5px;
+  padding-left: 40px;
+  filter: drop-shadow(-4px 4px 0px rgba(0, 0, 0, 0.25));
+}
+
+.dropdown-title img {
+  margin-right: 20px;
+  transition: transform 0.5s ease;
+  align-items: center;
+}
+
+nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.task-dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.dropdown-item {
+  margin: 20px 5px;
+}
+
+.dropdown:hover .dropdown-title {
+  background-color: var(--clr-blue);
+}
+
+.dropdown:hover .dropdown-title img {
+  transform: scaleY(-1);
+}
+
+.dropdown:hover .task-dropdown-list {
+  display: block;
+}
+
+.dropdown-item {
+  margin-bottom: 10px;
+  height: 30px;
+  width: 200px;
+  padding-left: 10px;
+  border-left: 5px solid transparent;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: var(--clr-button);
+  border-left: 5px solid #000;
+}
+
+/*Estilos da section search*/
+
+.search {
+  border-radius: 10px;
+  border: 1px solid var(--Fine-stroke, #000);
+  background: rgb(229, 191, 175);
+  display: flex;
+  font-family: var(--ff-secondary);
+  filter: drop-shadow(-4px 4px 0px rgba(0, 0, 0, 0.25));
+  flex-direction: column;
+  align-items: left;
+  padding: 10px;
+  margin: 0 auto;
+  width: 87%;
+}
+
+.title-search {
+  display: flex;
+  gap: 10px;
+  margin-left: 2rem;
+}
+
+.title-search img {
+  margin-top: 15px;
+  transform: scaleX(-1);
+}
+
+.input-search {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-search label {
+  display: none;
+}
+
+.input-search input {
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: #d9d9d9;
+  padding: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.button-container {
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#button-search {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: var(--clr-button);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+#button-search:hover {
+  background-color: rgb(134, 204, 166);
+}
+
+/*Estilo da animação dinâmica de texto riscado*/
+.text-content {
+  text-decoration: none;
+  /* ou outro estilo padrão */
+}
+
+.task-container.completed .text-content {
+  text-decoration: line-through;
+}
+
+/*Estilo da pesquisa*/
+.hidden {
+  display: none !important;
+}
+
+/* Estilo para o botão "Voltar para todas as tarefas" da section pesquisa*/
+.back-button-container button {
+  width: 100%;
+  font-family: var(--ff-secondary);
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: var(--clr-button);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/*Estilo da lixeira e tooltip*/
+.trash-div {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  font-family: var(--ff-secondary);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.trash-div img:hover {
+  background-color: rgb(199, 92, 92);
+  border-radius: 25px;
+}
+
+.trash-div:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*Estilo do footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-secondary);
+  text-align: center;
+  filter: drop-shadow(-4px 4px 0px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #53C2C5;
+  /* margin-top: 15rem; */
+}
+
+.footer-paragraph {
+  margin-right: 10px;
+}
+
+/* Estilos para o Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: var(--ff-secondary);
+  align-items: center;  
+  justify-content: center;  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(229, 191, 175);
+  border-radius: 10px;
+  border: 1px solid #000;
+  box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.25);
+  padding: 50px;
+  text-align: left;
+}
+
+/* Adiciona estilo para os inputs no modal */
+.modal-content input {
+  display: block;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* Adiciona estilo para o botão no modal */
+.modal-content button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--Primary-bg, #2196F3);
+  color: white;
+  cursor: pointer;
+}
+
+/* Estiliza o botão quando hover */
+.modal-content button:hover {
+  background-color: var(--Primary-hover, #0b7dda);
+}
+
+.close {
+  color: #000;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(165, 59, 59);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*Estilo do icon da lixeira*/
+.trash-div img {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+/*Estilos do modal DELETE*/
+
+#modalDelete {
+  z-index: 2;
+  display: none;
+}
+
+.delete-modal-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ff-secondary);
+  align-items: center;
+  justify-content: center;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(229, 191, 175);
+  border-radius: 10px;
+  border: 1px solid var(--Fine-stroke, #000);
+  box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  text-align: center;
+  width: 60%;
+  max-height: 80%;
+}
+
+.deleted-tasks-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.delete-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.restore-checkbox {
+  margin-right: 10px;
+}
+
+.delete-content {
+  text-align: left;
+  margin-top: 5px;
+}
+
+#restore-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--clr-background-dark);
+  color: var(--clr-white);
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#restore-button:hover {
+  background-color: var(--clr-blue);
+}
+
+/* Estilos para o modo escuro */
+.dark-mode body {
+  background-color: var(--clr-background-dark);
+  color: var(--clr-background-light);  
+}
+
+.dark-mode .task-container {
+  color: var(--clr-background-dark);
+}
+
+.dark-mode footer {
+  color: var(--clr-background-dark);
+}
+
+
+/* Importando estilos específicos para tablets e dispositivos móveis */
+@import './tablet.css'screen and (max-width: 1024px);
+@import './mobile.css'screen and (max-width: 768px);

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="shortcut icon" href="./assets/img/letras-logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/mobile.css" />
+    <link rel="stylesheet" href="./assets/css/tablet.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="header-title">
+        To Do <br />
+        List
+      </h1>
+      <span class="header-icon">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEI0lEQVR4nO2Zy4scVRTGf+JG0WRciRrQKNEYg4+MuvAF4j+giW5c+NiIougmuFEMPiP6B8SNaFBx4TaCikg7U/dURxwcBceJwZm6tydqJokTSCAZUWy5le7mdE1P9a2equ4Q8kFBU3Xvd79zH+ecexrOVcwL18xNMTZqHXNTjM1FXF2ok4t52glNZ1hMhG2MCImwzQpHvBZreCq4oxX2pgac6fiXi9jKkOEitqZjt3UIHwZ3tpPcpDs74ZOQfgt1brHCK87wtRNmnLDUemb8O//NtwnSYPhUTeKxpM4Wii6fMxxuETyf17YhPNQS3Ax5rPCzMzyYa4DwQmsbH04MtzHoATo0yQ2rGllnozOYUOE9DJnMO6Dzhs2VORIXca8/5BlRS/78JBE7/DZMalzmn/S3f3fmbC119TEs2ph7KhG5qnjDfU5YVnv0lBV2h8xWapDhbSecVoYs+wkZWnzQM2+F3xvCnUV5/L52gtMH1UVcR5VoNrnACbEadKERs2FQvkbMBs+hJiOiSljhka5tEzO+Zs6Ycc/V5k1itlPh7B9Qh++Nsrit8Kbi/aUs3u5BYsZ1dD64n/Vlcc9NMaYD58B+Pw/O8LryGu+XzW8NHyj+V8M7CrszLu20Fd5aYYBQU8ucG0UHQRKzXfF/E6zTCid7RMiTPQh+bX/Pi86DYt6wWWk4kD1/q+r0VgSuwIl2m1nDurINmDWsUxpOZL+H6lwVzvB3lQYc3M96HZnL5qedmaZeQrixbP6kzhZlwB9l8/slnGwP4NPnsvmTiB3KTX9bNr8/A6+pw7O3dH7DR8qAXWXzMx9xq06byw5kTjjeWeGYm6kCzjCrjHinNF7hXcU7Q1WwhoczOfzta+V0hjv03aKyZK4Na5jQ3sLfD9aYTh9SfLVSxaZXwjobM4NussJRFfZ/SGpcNID4i50wrRzDkeyFxk5w7cB34jRPbxWVnOGZrm/C3ZmoGJ589UgOreFUYriry0Dh2bZhhYtrPYpKK9ymMzypDHA+Xwnlb+U2jU7/iCf6uNVixTVfyNJ3VV9VWCHiMy5M77Gtdgt1rg/l98mgmpyjniuguPZxsAFWeM4a/utXVHKGfZ0BYh4P5fczrs7Qvn7FNa/FbymKwM/oYo1Lc4UYXlYzuSeU2wrvKQNeymvrNRRZ3UKwwgNqiaeD+xl+6vj9iPsZFf78ikus8E9rBf7tt2IePhX3bYv0qRRO+DF7UyrwTDNqdO3n4sXdPaPW3+1Rihvw2Kj1d/t0w7G8gNYKYJ00pBGzabhqA0TluTxdeUgDWDM8elcKZ/g8Ly0oGsCGDmt4Uc3s93aCK7NtnOEqJ0ypwsBOzhYk33GFLrsEPMu/CZdzNqEhPJrmT/08j29TIG8aKvzfRNbwZSaL7KTE1vDF0P8PO4/zOMfxP7pDJgJnLwDQAAAAAElFTkSuQmCC">
+      </span>
+    </header>
+    <main>
+      <section class="createTask grid-item">
+        <h3 class="title title-section">Criar nova tarefa</h3>
+        <form action="#">
+          <label for="input-title">Título</label>
+          <input
+            type="text"
+            id="input-title"
+            name="input-title"
+            class="input-style"
+            minlength="4"
+            autocomplete="off"
+            required
+          />
+          <label for="input-description">Descrição</label>
+          <input
+            type="text"
+            id="input-description"
+            name="input-description"
+            class="input-style"
+            minlength="20"
+            autocomplete="off"
+            required
+          />
+          <button id="create-task-button">Criar</button>
+        </form>
+      </section>
+
+      <section class="task grid-item" id="task-list">
+        <h3 class="title-section">Suas Tarefas</h3>
+      </section>
+
+      <section class="filter grid-item">
+        <div class="dropdown">
+          <div class="dropdown-title">
+            <h3>Filtrar tarefas</h3>
+            <span
+              ><img
+                width="20"
+                height="20"
+                src="https://img.icons8.com/fluency-systems-regular/50/expand-arrow--v1.png"
+                alt="expand-arrow--v1"
+            /></span>
+          </div>
+          <nav>
+            <ul class="task-dropdown-list">
+              <li class="dropdown-item">Todas as tarefas</li>
+              <li class="dropdown-item">Tarefas concluídas</li>
+              <li class="dropdown-item">Tarefas não concluídas</li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section class="search grid-item">
+        <div class="title-search">
+          <h3>Pesquisar tarefa</h3>
+          <span
+            ><img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/fluency-systems-regular/48/000000/search--v1.png"
+              alt="search--v1"
+          /></span>
+        </div>
+        <div class="input-search">
+          <label for="input-search"></label>
+          <input
+            type="text"
+            id="input-search"
+            name="input-search"
+            minlength="5"
+            placeholder="Digite o nome/descrição ou ID da tarefa"
+          />
+        </div>
+        <div class="button-container">
+          <button id="button-search">Pesquisar</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal EDIT -->
+    <div id="modalEdit" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <label for="input-title-modal">Título:</label>
+        <input type="text" id="input-title-modal" />
+        <label for="input-description-modal">Descrição:</label>
+        <input type="text" id="input-description-modal" />
+        <button onclick="saveChanges()">Salvar Alterações</button>
+      </div>
+    </div>
+
+    <!-- Trash icon-->
+    <div class="trash-div">
+      <span class="trash-icon">
+        <img
+          width="48"
+          height="48"
+          src="https://img.icons8.com/fluency-systems-regular/48/waste-restore.png"
+          alt="waste-restore"
+        />
+      </span>
+      <div class="tooltip">Recuperar tarefas</div>
+    </div>
+
+    <!-- Modal DELETE -->
+    <div id="modalDelete" class="modal-delete">
+      <div class="delete-modal-content">
+        <span class="close" onclick="closeDeleteModal()">&times;</span>
+        <h3>Tarefas excluídas</h3>
+        <div id="deleted-tasks-container" class="deleted-tasks-container"></div>
+        <button id="restore-button" onclick="restoreSelectedTasks()">
+          Restaurar tarefas
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footer-paragraph">&copy; Coded by Emily Miro - Contact me:</p>
+      <a href="https://www.linkedin.com/in/ednirli-miro-188b1513a/" target="_blank">
+        <img
+        width="40"
+        height="40"
+        src="https://img.icons8.com/fluency-systems-regular/96/linkedin.png"
+        alt="linkedin"
+      />
+      </a>
+     <a href="https://github.com/EmsMiro" target="_blank">
+       <img
+        width="40"
+        height="40"
+        src="https://img.icons8.com/fluency-systems-regular/96/github.png"
+        alt="github"
+      />
+     </a>     
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/darkmode.js"></script>    
+  </body>
+</html>

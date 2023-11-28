@@ -1,0 +1,83 @@
+@media(max-width:768px) {
+    /* Estilos do header*/
+    header {
+        flex-direction: row; 
+        align-items: center;        
+      }
+    
+      .header-title {
+        width: 50%; 
+        margin-right: 20px;       
+      }
+    
+      .header-icon {
+        width: 20%; 
+        margin: 0;
+      }
+
+      /*Estilos gerais (main)*/
+      main {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;        
+        margin: 20px 0;     
+    } 
+    
+    .grid-item {
+      width: 100%;
+      padding: 0;
+      margin: 10;
+    }
+
+    /*Estilos do form e da section create task*/
+    form {
+      margin: 0 48px;
+    }
+
+    .createTask {
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+ 
+    #create-task-button {
+      width: 50%;
+    }
+
+    /*Estilos das tasks*/
+    .task-container {
+      height: fit-content;
+      width: 80%;
+      font-size: 12px;
+      padding: 20;      
+    }
+
+    .task-container h3 {
+      font-size: 14px;
+    }
+
+    .icons img {
+      display: flex;
+      width: 20px;      
+      height: 20px;
+      margin-bottom: 5px;
+    }
+
+    /*Estilo do dropdown da section filter*/
+    .filter{
+      width: 97%;
+      margin: 0 auto;
+    }
+
+    .dropdown {
+      width: fit-content; 
+      padding-left: 3%;     
+    }
+
+    /*Estilo do search*/
+    .search {
+      width: 90%;
+    }    
+      
+}
